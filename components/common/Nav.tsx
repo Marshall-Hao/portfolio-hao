@@ -22,6 +22,7 @@ import {
   EditIcon,
 } from "@chakra-ui/icons";
 import { ReactNode, forwardRef } from "react";
+import ThemeToggleButton from "./theme-toggle-button";
 
 type TProps = {
   href: string;
@@ -114,6 +115,7 @@ const NavBar = (props: NProps) => {
         </Stack>
 
         <Box flex={1} textAlign="right">
+          <ThemeToggleButton></ThemeToggleButton>
           <Box
             ml={2}
             display={{ base: "inline-block", md: "none" }}

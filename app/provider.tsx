@@ -1,7 +1,12 @@
 "use client";
 
 import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  ColorModeScript,
+} from "@chakra-ui/react";
+import theme from "@/lib/theme";
+import Fonts from "@/components/common/font";
 
 export default function Providers({
   children,
@@ -10,7 +15,14 @@ export default function Providers({
 }) {
   return (
     <CacheProvider>
-      <ChakraProvider>{children}</ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript
+          initialColorMode={theme.config.initialColorMode}
+        />
+        <Fonts />
+
+        {children}
+      </ChakraProvider>
     </CacheProvider>
   );
 }
