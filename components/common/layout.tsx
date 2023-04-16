@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import NavBar from "./Nav";
+import { AnimatePresence } from "framer-motion";
 
 type TProps = {
   children: ReactNode;
@@ -22,7 +23,9 @@ const Layout: (props: TProps) => JSX.Element = ({
     <Box as="main" pb={8}>
       <NavBar path={path}></NavBar>
       <Container maxW="container.md" pt={14}>
-        {children}
+        <AnimatePresence mode="wait" initial={true}>
+          {children}
+        </AnimatePresence>
       </Container>
     </Box>
   );
