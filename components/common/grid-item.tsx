@@ -21,20 +21,22 @@ export const GridItem = ({
   title,
   thumbnail,
 }: TProps) => {
-  <Box w="100%" textAlign="center">
-    <LinkBox cursor="pointer">
-      <Image
-        src={thumbnail}
-        alt={title}
-        className="grid-item-thumbnail"
-        loading="lazy"
-      ></Image>
-      <LinkOverlay href={href} target="_blank">
-        <Text mt={2}>{title}</Text>
-      </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
-    </LinkBox>
-  </Box>;
+  return (
+    <Box w="100%" textAlign="center">
+      <LinkBox cursor="pointer">
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="grid-item-thumbnail"
+          loading="lazy"
+        ></Image>
+        <LinkOverlay href={href} target="_blank">
+          <Text mt={2}>{title}</Text>
+        </LinkOverlay>
+        <Text fontSize={14}>{children}</Text>
+      </LinkBox>
+    </Box>
+  );
 };
 
 type WProps = {

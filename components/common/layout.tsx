@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import NavBar from "./Nav";
+import RotateDog from "./rotate-dog";
 import { AnimatePresence } from "framer-motion";
 
 type TProps = {
@@ -23,6 +24,7 @@ const Layout: (props: TProps) => JSX.Element = ({
     <Box as="main" pb={8}>
       <NavBar path={path}></NavBar>
       <Container maxW="container.md" pt={14}>
+        <RotateDog></RotateDog>
         <AnimatePresence mode="wait" initial={true}>
           {children}
         </AnimatePresence>
