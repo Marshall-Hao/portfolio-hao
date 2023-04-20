@@ -13,6 +13,7 @@ const Scene = ({ ...props }) => {
   return (
     <Canvas
       {...props}
+      eventPrefix="client"
       shadows // * handle pixelration, if 3 * 3 , it will render 9 times, bad performance, restricts it
       dpr={[1, 2]}
       // * no tone Mapping

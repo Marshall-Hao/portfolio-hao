@@ -49,7 +49,11 @@ const LinkItem = ({
       href={href}
       scroll={false}
       p={2}
-      bg={active ? "grassTeal" : undefined}
+      bg={
+        active
+          ? useColorModeValue("#805AD5", "#FBD38D")
+          : undefined
+      }
       color={active ? "#202023" : inactiveColor}
       target={target}
       {...props}
@@ -106,11 +110,11 @@ const NavBar = (props: NProps) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
+          <LinkItem href="/" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
+          <LinkItem href="/about" path={path}>
+            About
           </LinkItem>
         </Stack>
 
@@ -129,19 +133,10 @@ const NavBar = (props: NProps) => {
               />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
-                  About
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/works">
                   Works
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/posts">
-                  Posts
-                </MenuItem>
-                <MenuItem
-                  as={MenuLink}
-                  href="https://uses.craftz.dog/"
-                >
-                  Uses
+                <MenuItem as={MenuLink} href="/about">
+                  About
                 </MenuItem>
               </MenuList>
             </Menu>

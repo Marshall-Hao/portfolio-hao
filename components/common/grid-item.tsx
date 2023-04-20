@@ -55,13 +55,20 @@ export const WorkGridItem = ({
   return (
     <Box w="100%" textAlign="center">
       <Link href={`/works/${id}`}></Link>
-      <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          className="grid-item-thumbnail"
-          placeholder="blur"
-        ></Image>
+      <LinkBox cursor="pointer" textAlign="center">
+        <Box>
+          <Image
+            borderRadius="lg"
+            w="full"
+            src={thumbnail}
+            alt={title}
+            className="grid-item-thumbnail"
+            placeholder="blur"
+            style={{
+              aspectRatio: "auto(720 / 400)",
+            }}
+          ></Image>
+        </Box>
         <LinkOverlay href={`/works/${id}`}>
           <Text mt={2} fontSize={20}>
             {title}
@@ -78,6 +85,8 @@ export const GridItemStyle = () => (
     styles={`
       .grid-item-thumbnail {
         border-radius:12px;
+        aspect-ratio: 720 / 400;
+        object-fit:cover;
       }
     `}
   ></Global>

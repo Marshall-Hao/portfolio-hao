@@ -31,8 +31,8 @@ const components = {
       return {
         color:
           props.colorMode === "dark"
-            ? "#ff63c3"
-            : "#3d7aed",
+            ? "#FBD38D"
+            : "#805AD5",
         textUnderlineOffset: 3,
       };
     },

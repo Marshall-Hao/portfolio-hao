@@ -1,7 +1,15 @@
 "use client";
 import React, { useRef } from "react";
-import { useGLTF, Float, Html } from "@react-three/drei";
-import { useColorModeValue } from "@chakra-ui/react";
+import {
+  useGLTF,
+  Float,
+  Html,
+  meshBounds,
+} from "@react-three/drei";
+import {
+  useColorModeValue,
+  useColorMode,
+} from "@chakra-ui/react";
 
 export function Bear(props) {
   const { nodes, materials } = useGLTF("/bear.glb");
@@ -48,15 +56,17 @@ export function Bear(props) {
 }
 
 export function Light(props) {
+  const ref = useRef<Mesh>();
   const { nodes, materials } = useGLTF("/light.glb");
-
+  const { toggleColorMode } = useColorMode();
+  console.log(ref);
   return (
     <Float>
       <rectAreaLight
         width={2.5}
         height={3.65}
         intensity={25}
-        color={useColorModeValue("orange", "yellow")}
+        color={useColorModeValue("#805AD5", "#FBD38D")}
         position={[3.5, 3.5, 2.5]}
       ></rectAreaLight>
       <group
@@ -64,12 +74,37 @@ export function Light(props) {
         dispose={null}
         position={[0.7, 1.2, 0.5]}
       >
+        <Html>
+          <div
+            style={{
+              transform: "translateY(-30px)",
+              width: "50px",
+              height: "50px",
+            }}
+            onClick={toggleColorMode}
+            onPointerEnter={() => {
+              document.body.style.cursor = "pointer";
+            }}
+            onPointerLeave={() => {
+              document.body.style.cursor = "default";
+            }}
+          ></div>
+        </Html>
         <mesh
+          ref={ref}
+          raycast={meshBounds}
           geometry={nodes.lightning.geometry}
-          material={materials["Yellow.026"]}
+          // material={useColorModeValue(
+          //   "purple",
+          //   materials["Yellow.026"]
+          // )}
           rotation={[Math.PI / 2, 0, Math.PI / 4]}
           castShadow
-        />
+        >
+          <meshStandardMaterial
+            color={useColorModeValue("#805AD5", "#FBD38D")}
+          ></meshStandardMaterial>
+        </mesh>
       </group>
     </Float>
   );
@@ -115,8 +150,8 @@ export function Laptop(props) {
           style={{
             fontSize: "100px",
             color: `${useColorModeValue(
-              "purple",
-              "yellow"
+              "#805AD5",
+              "#FBD38D"
             )}`,
           }}
         >
