@@ -1,13 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Layout from "@/components/common/layout";
-import Providers from "./provider";
-import {
-  Box,
-  useColorModeValue,
-  Glob,
-} from "@chakra-ui/react";
-import Fonts from "@/components/common/font";
+import Layout from "@/components/layout";
+import Providers from "@/components/helpers/provider";
 
 export const metadata: Metadata = {
   title: "HomePage",

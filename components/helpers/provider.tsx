@@ -6,7 +6,7 @@ import {
   ColorModeScript,
 } from "@chakra-ui/react";
 import theme from "@/lib/theme";
-import Fonts from "@/components/common/font";
+import Fonts from "@/components/helpers/font";
 
 export default function Providers({
   children,
