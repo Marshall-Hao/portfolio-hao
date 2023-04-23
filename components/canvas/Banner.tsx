@@ -68,8 +68,8 @@ const Models = () => {
     () =>
       new Vector3(
         6 * Math.sin(0.2 * Math.PI),
-        5,
-        2.5 * Math.cos(0.2 * Math.PI)
+        3.5,
+        1.5 * Math.cos(0.2 * Math.PI)
       )
   );
   let frame = 0;

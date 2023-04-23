@@ -16,7 +16,11 @@ type TProps = {
   delay: string;
 };
 
-const Section = ({ children, delay = 0 }: TProps) => {
+const Section = ({
+  children,
+  delay = 0,
+  ...props
+}: TProps) => {
   return (
     <StyledDiv
       initial={{ y: 10, opacity: 0 }}

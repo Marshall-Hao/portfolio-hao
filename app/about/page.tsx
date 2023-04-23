@@ -1,153 +1,186 @@
 "use client";
+import { NextPage } from "next";
 import {
   Container,
+  Box,
   Heading,
-  SimpleGrid,
+  Button,
+  List,
+  ListItem,
   Divider,
+  useColorModeValue,
 } from "@chakra-ui/react";
-
+import { Link } from "@chakra-ui/next-js";
 import Section from "@/components/common/section";
-import { NextPage } from "next";
-import { WorkGridItem } from "@/components/common/grid-item";
+import Paragraph from "@/components/bio/paragraph";
+import { EmailIcon } from "@chakra-ui/icons";
+import { BioSection, BioYear } from "@/components/bio/bio";
+import Name from "@/components/common/Name";
+
 import Article from "@/components/common/article";
-import thumbInkDrop from "../../public/images/works/inkdrop_eyecatch.png";
-import thumbWalknote from "../../public/images/works/walknote_eyecatch.png";
-import thumbFourPainters from "../../public/images/works/the-four-painters_eyecatch.jpg";
-import thumbMenkiki from "../../public/images/works/menkiki_eyecatch.png";
-import thumbMargelo from "../../public/images/works/margelo_eyecatch.png";
-import thumbModeTokyo from "../../public/images/works/modetokyo_eyecatch.png";
-import thumbStyly from "../../public/images/works/styly_eyecatch.png";
-import thumbPichu2 from "../../public/images/works/pichu2_eyecatch.png";
-import thumbFreeDBTagger from "../../public/images/works/freedbtagger_eyecatch.png";
-import thumbAmembo from "../../public/images/works/amembo_eyecatch.png";
+import {
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoWechat,
+} from "react-icons/io5";
 
 const Page: NextPage = () => {
   return (
-    <Article title="abc">
+    <Article title="about">
+      <Name path="/about"></Name>
       <Container>
-        <Heading as="h3" fontSize={20} mb={4}>
-          Works
-        </Heading>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section>
-            <WorkGridItem
-              id="gallycats"
-              title="GallyCats"
-              thumbnail={thumbInkDrop}
-            >
-              A platform for the world-wide foodie
-            </WorkGridItem>
-          </Section>
-          <Section>
-            <WorkGridItem
-              id="Warhammer"
-              title="Warhammer Campaign"
-              thumbnail={thumbWalknote}
-            >
-              Campaign for Game Warhammer
-            </WorkGridItem>
-          </Section>
-
-          <Section delay={0.1}>
-            <WorkGridItem
-              id="fourpainters"
-              title="The four painters"
-              thumbnail={thumbFourPainters}
-            >
-              A video work generated with deep learning,
-              imitating famous four painters like Van Gogh
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.1}>
-            <WorkGridItem
-              id="menkiki"
-              thumbnail={thumbMenkiki}
-              title="Menkiki"
-            >
-              An app that suggests ramen(noodle) shops based
-              on a given photo of the ramen you want to eat
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
-
-        <Section delay={0.2}>
-          <Divider my={6} />
-
-          <Heading as="h3" fontSize={20} mb={4}>
-            Collaborations
+        <Divider></Divider>
+        <Section delay="0.1">
+          <Heading as="h3" variant="section-title">
+            About
           </Heading>
-        </Section>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.3}>
-            <WorkGridItem
-              id="margelo"
-              thumbnail={thumbMargelo}
-              title="Margelo"
-            >
-              A website of the elite app development and
-              contracting agency based in Austria
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.3}>
-            <WorkGridItem
-              id="modetokyo"
-              thumbnail={thumbModeTokyo}
-              title="mode.tokyo"
-            >
-              The mode magazine for understanding to
-              personally enjoy Japan
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.3}>
-            <WorkGridItem
-              id="styly"
-              thumbnail={thumbStyly}
-              title="Styly"
-            >
-              A VR Creative tools for fashion brands
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
-
-        <Section delay={0.4}>
-          <Divider my={6} />
-
-          <Heading as="h3" fontSize={20} mb={4}>
-            Old works
-          </Heading>
+          <Paragraph>
+            I’m a developer and designer living in ShenZhen,
+            I have passions on wide range of topics: web
+            development, Computer Graphic, Shader, Creative
+            Coding and Making 3D Model! 💡 I also enjoy
+            teaching non-programmer people how to code!
+          </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.5}>
-            <WorkGridItem
-              id="pichu2"
-              thumbnail={thumbPichu2}
-              title="Pichu*Pichu"
-            >
-              Twitter client app for iPhone Safari
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.5}>
-            <WorkGridItem
-              id="freedbtagger"
-              thumbnail={thumbFreeDBTagger}
-              title="freeDBTagger"
-            >
-              Automatic audio file tagging tool using FreeDB
-              for Windows
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.6}>
-            <WorkGridItem
-              id="amembo"
-              thumbnail={thumbAmembo}
-              title="Amembo"
-            >
-              P2P private file sharing tool with MSN
-              Messenger integration for Windows
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
+        <Section delay="0.2">
+          <Heading as="h3" variant="section-title">
+            Social
+          </Heading>
+          <List
+            display="flex"
+            flexDirection={["column", "column", "row"]}
+            gap={4}
+          >
+            <ListItem>
+              <Link
+                href="https://github.com/Marshall-Hao"
+                target="_blank"
+              >
+                <Button
+                  variant="solid"
+                  colorScheme={useColorModeValue(
+                    "purple",
+                    "orange"
+                  )}
+                  leftIcon={<IoLogoGithub />}
+                >
+                  @Marshall-Hao
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.instagram.com/marshallccccc/"
+                target="_blank"
+              >
+                <Button
+                  variant="outline"
+                  colorScheme={useColorModeValue(
+                    "purple",
+                    "orange"
+                  )}
+                  leftIcon={<IoLogoInstagram />}
+                >
+                  @marshallccccc
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.linkedin.cn/incareer/in/marshall-hao"
+                target="_blank"
+              >
+                <Button
+                  variant="ghost"
+                  colorScheme={useColorModeValue(
+                    "purple",
+                    "orange"
+                  )}
+                  leftIcon={<IoLogoLinkedin />}
+                >
+                  @Marshall-hao
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+        </Section>
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Hobbies
+          </Heading>
+          <Paragraph>
+            CrossFit🏋🏻, Games🕹️, Movies🍿, Style 🧥, techno
+            🎧
+          </Paragraph>
+        </Section>
+        <Section delay="0.4">
+          <Heading as="h3" variant="section-title">
+            Activities
+          </Heading>
+
+          <BioSection>
+            <BioYear>2021 {"-"} Today</BioYear>
+            FREELANCER
+          </BioSection>
+          <BioSection>
+            <BioYear>2021 {"-"} Today</BioYear>
+            Web Development Instructor at{" "}
+            <Link href="https://www.lewagon.com/">
+              Le Wagon
+            </Link>
+          </BioSection>
+          <BioSection>
+            <BioYear>2021 {"-"} Today</BioYear>
+            Lead Frontend Developer at{" "}
+            <Link href="https://www.papercranetech.cn/">
+              Papercranetech
+            </Link>
+          </BioSection>
+        </Section>
+        <Section delay="0.5">
+          <Heading as="h3" variant="section-title">
+            Contact
+          </Heading>
+          <List
+            display="flex"
+            flexDirection={["column", "column", "row"]}
+            gap={4}
+          >
+            <ListItem>
+              <Link
+                href="mailto:marshallchan666@outlook.com"
+                target="_blank"
+              >
+                <Button
+                  variant="solid"
+                  m="auto"
+                  colorScheme={useColorModeValue(
+                    "purple",
+                    "orange"
+                  )}
+                  leftIcon={<EmailIcon />}
+                >
+                  Contact Me!
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Button
+                variant="solid"
+                m="auto"
+                colorScheme={useColorModeValue(
+                  "purple",
+                  "orange"
+                )}
+                leftIcon={<IoLogoWechat />}
+              >
+                271209265
+              </Button>
+            </ListItem>
+          </List>
+        </Section>
       </Container>
     </Article>
   );

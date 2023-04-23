@@ -9,7 +9,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 
 export const Title = ({ children }) => (
   <Box>
-    <Link href="/works">Works</Link>
+    <Link href="/">Works</Link>
     <span>
       {" "}
       <ChevronRightIcon />{" "}

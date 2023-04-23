@@ -59,7 +59,7 @@ export function Light(props) {
   const ref = useRef<Mesh>();
   const { nodes, materials } = useGLTF("/light.glb");
   const { toggleColorMode } = useColorMode();
-  console.log(ref);
+
   return (
     <Float>
       <rectAreaLight
@@ -148,14 +148,16 @@ export function Laptop(props) {
       >
         <h1
           style={{
-            fontSize: "100px",
+            fontSize: "50px",
+            fontStyle: "italic",
             color: `${useColorModeValue(
               "#805AD5",
               "#FBD38D"
             )}`,
           }}
         >
-          {useColorModeValue("Light Mode", "DarK Mode")}
+          {/* {useColorModeValue("Light Mode", "DarK Mode")} */}
+          Now,you can zoom out!
         </h1>
       </Html>
       <group position={[0, 0.52, 0]} scale={0.1}>

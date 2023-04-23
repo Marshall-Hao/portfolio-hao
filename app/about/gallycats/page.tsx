@@ -5,7 +5,6 @@ import {
   Link,
   List,
   ListItem,
-  AspectRatio,
 } from "@chakra-ui/react";
 
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -25,60 +24,40 @@ const Page = () => {
           GallyCat <Badge>2023</Badge>
         </Title>
         <Paragraph>
-          Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Repellat dolorum consequuntur
-          inventore eum explicabo eveniet dignissimos
-          adipisci nostrum, enim libero autem temporibus
-          recusandae alias animi dolore odio officia dicta
-          veritatis?
+          Gallycat organically curates authentic food spots
+          to give you instant access to the best local eats.
+          Unlock local food trails marked by your favorite,
+          most trusted foodies. Organize and create your own
+          trails and share them with family, friends, and
+          followers. Join the community of curious food
+          experience seekers.
         </Paragraph>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Link href="https://www.inkdrop.app/">
-              https://www.inkdrop.app/{" "}
-              <ExternalLinkIcon mx="2px" />
-            </Link>
+            {/* <Link href="https://www.inkdrop.app/"> */}
+            Coming very soon!
+            <ExternalLinkIcon mx="2px" />
+            {/* </Link> */}
           </ListItem>
           <ListItem>
             <Meta>Platform</Meta>
-            <span>Windows/macOS/Linux/iOS/Android</span>
+            <span>Web/Mobile(PWA)</span>
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
-            <span>NodeJS, Electron, React Native</span>
-          </ListItem>
-          <ListItem>
-            <Meta>Blogpost</Meta>
-            <Link href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820">
-              Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Assumenda sint est nisi!
-              Blanditiis temporibus fugiat labore corrupti
-              quasi ipsam, ex cumque quae quod, magnam nulla
-              incidunt, saepe porro quaerat atque?
-              {/*{" "} for space */}{" "}
-              <ExternalLinkIcon mx="2px" />
-            </Link>
+            <span>Next.js, React, Ruby on Rails</span>
           </ListItem>
         </List>
 
         <WorkImage
-          src="/images/works/inkdrop_01.png"
-          alt="Inkdrop"
+          src="/images/actualWorks/GC-detail1.jpg"
+          alt="gallycat"
         />
         <WorkImage
-          src="/images/works/inkdrop_02.png"
-          alt="Inkdrop"
+          src="/images/actualWorks/gc-detail2.jpg"
+          alt="gallycat"
         />
-        <AspectRatio maxW="640px" ratio={1.7} my={4}>
-          <iframe
-            src="https://www.youtube.com/embed/-qBavwqc_mY"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </AspectRatio>
       </Container>
     </Article>
   );

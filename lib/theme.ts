@@ -3,6 +3,7 @@ import {
   extendTheme,
   type ThemeConfig,
   StyleFunctionProps,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const styles = {

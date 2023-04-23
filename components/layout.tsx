@@ -8,7 +8,6 @@ import { AnimatePresence } from "framer-motion";
 import NavBar from "./common/Nav";
 import Scene from "./canvas/Scene";
 import BannerModels from "./canvas/Banner";
-import Name from "./common/Name";
 
 type TProps = {
   children: ReactNode;
@@ -25,7 +24,7 @@ const Layout: (props: TProps) => JSX.Element = ({
         <NavBar path={path}></NavBar>
         <Container maxW="container.md" pt={14}>
           <BannerModels></BannerModels>
-          <Name path={path}></Name>
+          {/* <Name path={path}></Name> */}
           <AnimatePresence mode="wait" initial={true}>
             {children}
           </AnimatePresence>

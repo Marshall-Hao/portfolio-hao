@@ -24,7 +24,7 @@ const Name = ({ path }) => {
           mb={6}
           textAlign="center"
         >
-          Hi! Welcome to my space!
+          Hi! 嗨! 👋
         </Box>
         <Box
           display="flex"
@@ -44,7 +44,7 @@ const Name = ({ path }) => {
               maxW="100px"
               display="inline-block"
               borderRadius="full"
-              src="/images/marshall.jpg"
+              src="/images/marshall.jpeg"
               alt="profile"
               width="100"
               height="100"
@@ -67,8 +67,7 @@ const Name = ({ path }) => {
             </Heading>
             <Box alignSelf={["center", "end"]}>
               {" "}
-              <span> Creative developer</span> living in
-              ShenZhen!
+              Code, Design and Teach
             </Box>
             <Link
               href={path === "/about" ? "" : "about"}

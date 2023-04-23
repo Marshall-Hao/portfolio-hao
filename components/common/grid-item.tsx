@@ -1,9 +1,11 @@
+"use client";
 import { Link, Image } from "@chakra-ui/next-js";
 import {
   Box,
   Text,
   LinkBox,
   LinkOverlay,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { ReactNode } from "react";
@@ -41,9 +43,10 @@ export const GridItem = ({
 
 type WProps = {
   children: ReactNode;
-  id: number;
+  id?: string;
   title: string;
   thumbnail: string;
+  href?: string;
 };
 
 export const WorkGridItem = ({
@@ -51,10 +54,14 @@ export const WorkGridItem = ({
   id,
   title,
   thumbnail,
+  href,
 }: WProps) => {
   return (
     <Box w="100%" textAlign="center">
-      <Link href={`/works/${id}`}></Link>
+      <Link
+        href={id ? `/about/${id}` : href}
+        target={href ? "_blank" : "_self"}
+      ></Link>
       <LinkBox cursor="pointer" textAlign="center">
         <Box>
           <Image
@@ -69,7 +76,11 @@ export const WorkGridItem = ({
             }}
           ></Image>
         </Box>
-        <LinkOverlay href={`/works/${id}`}>
+        <LinkOverlay
+          as={Link}
+          href={id ? `/about/${id}` : href}
+          target={href ? "_blank" : "_self"}
+        >
           <Text mt={2} fontSize={20}>
             {title}
           </Text>
