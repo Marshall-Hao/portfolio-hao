@@ -43,17 +43,17 @@ const LinkItem = ({
     "gray.800",
     "whiteAlpha.900"
   );
+  const activeColor = useColorModeValue(
+    "#805AD5",
+    "#FBD38D"
+  );
   return (
     <Link
       as={NextLink}
       href={href}
       scroll={false}
       p={2}
-      bg={
-        active
-          ? useColorModeValue("#805AD5", "#FBD38D")
-          : undefined
-      }
+      bg={active ? activeColor : undefined}
       color={active ? "#202023" : inactiveColor}
       target={target}
       {...props}
