@@ -17,13 +17,17 @@ const Layout: (props: TProps) => JSX.Element = ({
   children,
 }: TProps) => {
   const path = usePathname();
+  console.log(path);
 
   return (
     <>
       <Box as="main" pb={8}>
         <NavBar path={path}></NavBar>
+
         <Container maxW="container.md" pt={14}>
-          <BannerModels></BannerModels>
+          {path === "/experiments" ? null : (
+            <BannerModels></BannerModels>
+          )}
           {/* <Name path={path}></Name> */}
           <AnimatePresence mode="wait" initial={true}>
             {children}

@@ -117,6 +117,9 @@ const NavBar = (props: NProps) => {
           <LinkItem href="/about" path={path}>
             About
           </LinkItem>
+          <LinkItem href="/experiments" path={path}>
+            Experiments
+          </LinkItem>
         </Stack>
 
         <Box flex={1} textAlign="right">
@@ -138,6 +141,9 @@ const NavBar = (props: NProps) => {
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/about">
                   About
+                </MenuItem>
+                <MenuItem href="/experiments" path={path}>
+                  Experiments
                 </MenuItem>
               </MenuList>
             </Menu>

@@ -1,15 +1,22 @@
 "use client";
 import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import {
   useGLTF,
   Float,
   Html,
   meshBounds,
+  shaderMaterial,
 } from "@react-three/drei";
 import {
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
+import { CubeTextureLoader } from "three";
+
+// * shader
+import popVertex from "../experiments/shader/experiment1/vertex.glsl";
+import popFrag from "../experiments/shader/experiment1/fragment.glsl";
 
 export function Bear(props) {
   const { nodes, materials } = useGLTF("/bear.glb");
@@ -107,6 +114,53 @@ export function Light(props) {
         </mesh>
       </group>
     </Float>
+  );
+}
+
+export function LightNormal({ children, ...props }) {
+  const ref = useRef<Mesh>();
+  const { nodes, materials } = useGLTF("/light.glb");
+
+  return (
+    <group
+      {...props}
+      dispose={null}
+      position={[0.7, 1.2, 0.5]}
+    >
+      <mesh
+        ref={ref}
+        geometry={nodes.lightning.geometry}
+        rotation={[Math.PI / 2, 0, Math.PI / 4]}
+        castShadow
+      >
+        {children}
+      </mesh>
+    </group>
+  );
+}
+
+export function Suzanne({ children, ...props }) {
+  const { nodes, materials } = useGLTF("/suzanne.glb");
+  const ref = useRef();
+  useFrame((state, delta) => {
+    ref.current.uniforms.time.value += delta;
+    ref.current.uniforms.specMap.value =
+      state.scene.background;
+  });
+  return (
+    <group {...props} dispose={null}>
+      <mesh geometry={nodes.Suzanne.geometry}>
+        <shaderMaterial
+          ref={ref}
+          vertexShader={popVertex}
+          fragmentShader={popFrag}
+          uniforms={{
+            time: { value: 0 },
+            specMap: { value: new CubeTextureLoader() },
+          }}
+        ></shaderMaterial>
+      </mesh>
+    </group>
   );
 }
 
