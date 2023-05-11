@@ -15,6 +15,9 @@ import {
   Experiment3,
   Experiment4,
   Experiment5,
+  Experiment6,
+  Experiment7,
+  Experiment8,
 } from "@/components/experiments/Experiment";
 
 const View = dynamic(
@@ -87,11 +90,32 @@ const Page: NextPage = () => {
       >
         <Experiment3></Experiment3>
       </ShaderContainer>
-      <ShaderContainer name="experiment4" delay={0.4}>
+      <ShaderContainer
+        name="experiment4(cloud)"
+        delay={0.4}
+      >
         <Experiment4></Experiment4>
       </ShaderContainer>
-      <ShaderContainer name="experiment5" delay={0.5}>
+      <ShaderContainer
+        name="experiment5(noisevisual)"
+        delay={0.5}
+      >
         <Experiment5></Experiment5>
+      </ShaderContainer>
+      <ShaderContainer name="experiment6(burn)" delay={0.6}>
+        <Experiment6></Experiment6>
+      </ShaderContainer>
+      <ShaderContainer
+        name="experiment7(effect)"
+        delay={0.6}
+      >
+        <Experiment7></Experiment7>
+      </ShaderContainer>
+      <ShaderContainer
+        name="experiment8(planet)"
+        delay={0.6}
+      >
+        <Experiment8></Experiment8>
       </ShaderContainer>
     </Article>
   );
