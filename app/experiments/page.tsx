@@ -75,10 +75,16 @@ const Page: NextPage = () => {
       >
         <Experiment1></Experiment1>
       </ShaderContainer>
-      <ShaderContainer name="experiment2" delay={0.2}>
+      <ShaderContainer
+        name="experiment2(sinwave)"
+        delay={0.2}
+      >
         <Experiment2></Experiment2>
       </ShaderContainer>
-      <ShaderContainer name="experiment3" delay={0.3}>
+      <ShaderContainer
+        name="experiment3(boolean)"
+        delay={0.3}
+      >
         <Experiment3></Experiment3>
       </ShaderContainer>
       <ShaderContainer name="experiment4" delay={0.4}>
