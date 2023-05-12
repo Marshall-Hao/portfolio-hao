@@ -64,7 +64,7 @@ const View = forwardRef(
             track={localRef}
           >
             {children}
-            {orbit && <OrbitControls />}
+            <OrbitControls autoRotate={orbit} />
           </ViewImpl>
         </Three>
       </>

@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useEffect, useRef, useState } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Group, Vector3 } from "three";
 import {
   Environment,
@@ -62,6 +62,7 @@ function easeOutCirc(x: number) {
 
 const Models = () => {
   const models = useRef<Group>(null);
+  const state = useThree();
 
   const [target] = useState(() => new Vector3(-0.5, 0, 0));
   const [initialCameraPosition] = useState(
@@ -88,6 +89,15 @@ const Models = () => {
       state.camera.lookAt(models.current.position);
     }
   });
+
+  useEffect(() => {
+    return () => {
+      state.camera.position.x = 0;
+      state.camera.position.y = 0;
+      state.camera.position.z = 10;
+      // state.camera.lookAt(new Vector3(1, 1, 1));
+    };
+  }, []);
 
   return (
     <group ref={models}>

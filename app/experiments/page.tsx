@@ -18,6 +18,7 @@ import {
   Experiment6,
   Experiment7,
   Experiment8,
+  Experiment9,
 } from "@/components/experiments/Experiment";
 
 const View = dynamic(
@@ -54,7 +55,6 @@ const ShaderContainer = ({
           {name}
         </Heading>
         <View
-          orbit
           className={name}
           m="auto"
           w="100%"
@@ -107,15 +107,21 @@ const Page: NextPage = () => {
       </ShaderContainer>
       <ShaderContainer
         name="experiment7(effect)"
-        delay={0.6}
+        delay={0.7}
       >
         <Experiment7></Experiment7>
       </ShaderContainer>
       <ShaderContainer
         name="experiment8(planet)"
-        delay={0.6}
+        delay={0.8}
       >
         <Experiment8></Experiment8>
+      </ShaderContainer>
+      <ShaderContainer
+        name="experiment9(bananas)"
+        delay={0.9}
+      >
+        <Experiment9></Experiment9>
       </ShaderContainer>
     </Article>
   );
