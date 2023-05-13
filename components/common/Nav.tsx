@@ -142,7 +142,11 @@ const NavBar = (props: NProps) => {
                 <MenuItem as={MenuLink} href="/about">
                   About
                 </MenuItem>
-                <MenuItem href="/experiments" path={path}>
+                <MenuItem
+                  as={MenuLink}
+                  href="/experiments"
+                  path={path}
+                >
                   Experiments
                 </MenuItem>
               </MenuList>

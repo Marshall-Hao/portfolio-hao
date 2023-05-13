@@ -95,6 +95,7 @@ export const Experiment2 = () => {
 };
 
 export const Experiment3 = () => {
+  console.log(window.innerWidth, window.innerHeight);
   const ref = useRef();
   useFrame((state, delta) => {
     ref.current.uniforms.time.value += delta;

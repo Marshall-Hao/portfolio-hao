@@ -94,7 +94,7 @@ const Models = () => {
     return () => {
       state.camera.position.x = 0;
       state.camera.position.y = 0;
-      state.camera.position.z = 10;
+      state.camera.position.z = 11;
       // state.camera.lookAt(new Vector3(1, 1, 1));
     };
   }, []);

@@ -1,5 +1,6 @@
 "use client";
 import { NextPage } from "next";
+import { useRef, createRef } from "react";
 import dynamic from "next/dynamic";
 import {
   Heading,
@@ -47,6 +48,8 @@ const ShaderContainer = ({
   delay,
   withCommon = false,
 }) => {
+  // const ref = useRef();
+  // console.log(ref);
   return (
     <>
       <Divider my={6} />
@@ -60,6 +63,7 @@ const ShaderContainer = ({
           w="100%"
           h={[260, 460, 620]}
           position="relative"
+          // ref={ref}
         >
           {children}
           <Common></Common>
