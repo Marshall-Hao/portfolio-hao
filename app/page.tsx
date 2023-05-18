@@ -16,6 +16,7 @@ import thumbZFW from "../public/images/actualWorks/zfw-eyecatch.jpg";
 import thumbTabBoard from "../public/images/actualWorks/taboard-eyecatch.jpg";
 import thumbLeWagon from "../public/images/actualWorks/le-wagon-eyecatch.svg";
 import thumbBall from "../public/images/actualWorks/ball-eyecatch.jpeg";
+import thumbParticle from "../public/images/actualWorks/particles-eyecatch.png";
 
 // * client still pre-rendered
 export default function Home() {
@@ -90,6 +91,16 @@ export default function Home() {
             >
               A Web 3D game let the user controll the ball
               avoiding obstacles.
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.3}>
+            <WorkGridItem
+              thumbnail={thumbParticle}
+              title="Particles Animation"
+              href="/experiments/particles"
+            >
+              A demo for interactive animation between
+              particles shapes switching.
             </WorkGridItem>
           </Section>
         </SimpleGrid>
