@@ -11,10 +11,7 @@ import {
   useTexture,
   useGLTF,
 } from "@react-three/drei";
-import {
-  EffectComposer,
-  DepthOfField,
-} from "@react-three/postprocessing";
+
 import {
   CubeTextureLoader,
   Vector2,

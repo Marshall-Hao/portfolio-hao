@@ -22,10 +22,12 @@ const Layout: (props: TProps) => JSX.Element = ({
   return (
     <>
       <Box as="main" pb={8}>
-        <NavBar path={path}></NavBar>
+        {path.includes("/experiments/") ? null : (
+          <NavBar path={path}></NavBar>
+        )}
 
         <Container maxW="container.md" pt={14}>
-          {path === "/experiments" ? null : (
+          {path.includes("/experiments") ? null : (
             <BannerModels></BannerModels>
           )}
           {/* <Name path={path}></Name> */}

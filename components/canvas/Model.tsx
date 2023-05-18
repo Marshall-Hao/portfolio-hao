@@ -139,6 +139,23 @@ export function LightNormal({ children, ...props }) {
   );
 }
 
+export function SuzanneNormal({ children, ...props }) {
+  const { nodes, materials } = useGLTF("/suzanne.glb");
+
+  return (
+    <group {...props} dispose={null}>
+      {/* // * points already contain the mesh inside */}
+      <points geometry={nodes.Suzanne.geometry}>
+        <pointsMaterial
+          color="#5786F5"
+          size={0.015}
+          // sizeAttenuation
+        />
+      </points>
+    </group>
+  );
+}
+
 export function Suzanne({ children, ...props }) {
   const { nodes, materials } = useGLTF("/suzanne.glb");
   const ref = useRef();
