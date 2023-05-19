@@ -72,6 +72,7 @@ export const WorkGridItem = ({
             className="grid-item-thumbnail"
             style={{
               aspectRatio: "auto(720 / 400)",
+              backgroundSize: "cover",
             }}
           ></Image>
         </Box>

@@ -14,9 +14,10 @@ import thumbGallyCat from "../public/images/actualWorks/gallycat-eyecatch.jpeg";
 import thumbWarHammer from "../public/images/actualWorks/warhammer-catch.jpg";
 import thumbZFW from "../public/images/actualWorks/zfw-eyecatch.jpg";
 import thumbTabBoard from "../public/images/actualWorks/taboard-eyecatch.jpg";
-import thumbLeWagon from "../public/images/actualWorks/le-wagon-eyecatch.svg";
+import thumbLeWagon from "../public/images/actualWorks/lewagon-eyecatch.png";
 import thumbBall from "../public/images/actualWorks/ball-eyecatch.jpeg";
 import thumbParticle from "../public/images/actualWorks/particles-eyecatch.png";
+import thumbSound from "../public/images/actualWorks/sound-eyecatch.png";
 
 // * client still pre-rendered
 export default function Home() {
@@ -101,6 +102,16 @@ export default function Home() {
             >
               A demo for interactive animation between
               particles shapes switching.
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.3}>
+            <WorkGridItem
+              thumbnail={thumbSound}
+              title="Sound Animation"
+              href="/experiments/soundAnimation"
+            >
+              An experiment to let the ball animated based
+              on the sound playing!
             </WorkGridItem>
           </Section>
         </SimpleGrid>
