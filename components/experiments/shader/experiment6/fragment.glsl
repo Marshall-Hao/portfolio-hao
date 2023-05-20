@@ -79,7 +79,10 @@ void main() {
 
   float noiseSample = fbm(vec3(pixelCoords,0.0) * 0.005, 4, 0.5,2.0);
   // *  因为转为resolution坐标系了
-  float size = smoothstep(0.0,15.0,time) * (50.0  + length(resolution) * 0.5);
+  float stepTime = abs(sin(time));
+  float realTime = remap(stepTime , 0.0, 1.0, 0.0, 15.0);
+ 
+  float size = smoothstep(0.0,15.0,realTime) * (50.0  + length(resolution) * 0.5);
   float d = sdfCircle(pixelCoords + 50.0 * noiseSample,size);
 
   // * 因为要 作用在 uv坐标系，所以转换回
@@ -96,6 +99,7 @@ void main() {
 
   // * dark burning effect
   // * make a circle only
+  // * 淡淡一层黑色的圈
   float burnAmount = 1.0 - exp(-d*d*0.001);
   // * 小于-40 是本身， 大于40 也是本身，中间就是一层圈 -40～ 40的一个漩涡圈
   colour = mix(vec3(0.0), colour, burnAmount);
