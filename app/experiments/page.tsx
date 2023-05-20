@@ -1,11 +1,13 @@
 "use client";
 import { NextPage } from "next";
-import { useRef, createRef } from "react";
+import { useRef, createRef, Suspense } from "react";
 import dynamic from "next/dynamic";
 import {
   Heading,
   SimpleGrid,
   Divider,
+  Box,
+  Spinner,
 } from "@chakra-ui/react";
 
 import Article from "@/components/common/article";
@@ -57,17 +59,37 @@ const ShaderContainer = ({
         <Heading as="h3" fontSize={20} mb={4}>
           {name}
         </Heading>
-        <View
-          className={name}
-          m="auto"
-          w="100%"
-          h={[260, 460, 620]}
-          position="relative"
-          // ref={ref}
+        <Suspense
+          fallback={
+            <Box
+              m="auto"
+              w="100%"
+              h={[260, 460, 620]}
+              position="relative"
+            >
+              <Spinner
+                size="xl"
+                position="absolute"
+                left="50%"
+                top="50%"
+                ml="calc(0px - var(--spinner-size) / 2)"
+                mt="calc(0px - var(--spinner-size))"
+              />
+            </Box>
+          }
         >
-          {children}
-          <Common></Common>
-        </View>
+          <View
+            className={name}
+            m="auto"
+            w="100%"
+            h={[260, 460, 620]}
+            position="relative"
+            // ref={ref}
+          >
+            {children}
+            <Common></Common>
+          </View>
+        </Suspense>
       </Section>
     </>
   );
@@ -76,38 +98,38 @@ const ShaderContainer = ({
 const Page: NextPage = () => {
   return (
     <Article name="experiment">
+      <ShaderContainer name="experiment1(burn)" delay={0.1}>
+        <Experiment6></Experiment6>
+      </ShaderContainer>
       <ShaderContainer
-        name="experiment1(PopIn)"
-        delay={0.1}
+        name="experiment2(PopIn)"
+        delay={0.2}
       >
         <Experiment1></Experiment1>
       </ShaderContainer>
       <ShaderContainer
-        name="experiment2(sinwave)"
-        delay={0.2}
+        name="experiment3(sinwave)"
+        delay={0.3}
       >
         <Experiment2></Experiment2>
       </ShaderContainer>
       <ShaderContainer
-        name="experiment3(boolean)"
-        delay={0.3}
+        name="experiment4(boolean)"
+        delay={0.4}
       >
         <Experiment3></Experiment3>
       </ShaderContainer>
       <ShaderContainer
-        name="experiment4(cloud)"
-        delay={0.4}
+        name="experiment5(cloud)"
+        delay={0.5}
       >
         <Experiment4></Experiment4>
       </ShaderContainer>
       <ShaderContainer
-        name="experiment5(noisevisual)"
-        delay={0.5}
+        name="experiment6(noisevisual)"
+        delay={0.6}
       >
         <Experiment5></Experiment5>
-      </ShaderContainer>
-      <ShaderContainer name="experiment6(burn)" delay={0.6}>
-        <Experiment6></Experiment6>
       </ShaderContainer>
       <ShaderContainer
         name="experiment7(effect)"

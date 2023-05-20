@@ -1,6 +1,12 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  Suspense,
+} from "react";
+import { Box, Spinner } from "@chakra-ui/react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Group, Vector3 } from "three";
 import {
@@ -122,15 +128,37 @@ const BannerModels = () => {
       h={[260, 460, 620]}
       position="relative"
     >
-      <Models></Models>
-      <ContactShadows
-        opacity={1}
-        scale={10}
-        blur={1}
-        far={10}
-        resolution={256}
-        color="#000000"
-      />
+      <Suspense
+        fallback={
+          <Box
+            m="auto"
+            mt={["-20px", "-60px", "-120px"]}
+            mb={["-40px", "-140px", "-200px"]}
+            w={[280, 480, 640]}
+            h={[280, 480, 640]}
+            position="relative"
+          >
+            <Spinner
+              size="xl"
+              position="absolute"
+              left="50%"
+              top="50%"
+              ml="calc(0px - var(--spinner-size) / 2)"
+              mt="calc(0px - var(--spinner-size))"
+            />
+          </Box>
+        }
+      >
+        <Models></Models>
+        <ContactShadows
+          opacity={1}
+          scale={10}
+          blur={1}
+          far={10}
+          resolution={256}
+          color="#000000"
+        />
+      </Suspense>
     </View>
   );
 };

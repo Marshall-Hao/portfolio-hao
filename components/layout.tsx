@@ -1,8 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { usePathname } from "next/navigation";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Spinner } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
 import NavBar from "./common/Nav";
