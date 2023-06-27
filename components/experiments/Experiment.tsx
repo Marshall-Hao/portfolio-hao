@@ -18,6 +18,8 @@ import {
   Mesh,
   MathUtils,
 } from "three";
+import { suspend } from "suspend-react";
+
 // * shader
 import sinVertex from "./shader/experiment2/vertex.glsl";
 import sinFrag from "./shader/experiment2/fragment.glsl";
@@ -33,6 +35,10 @@ import effecrtVertex from "./shader/experiment7/vertex.glsl";
 import effectFrag from "./shader/experiment7/fragment.glsl";
 import planetVertex from "./shader/experiment8/vertex.glsl";
 import planetFrag from "./shader/experiment8/fragment.glsl";
+
+const city = import("@pmndrs/assets/hdri/lab.exr").then(
+  (module) => module.default
+);
 
 const Suzanne = dynamic(
   () =>
@@ -57,6 +63,7 @@ export const Experiment1 = () => {
   return (
     <group>
       <Environment background preset="dawn"></Environment>
+
       <Suzanne></Suzanne>
     </group>
   );
@@ -73,6 +80,7 @@ export const Experiment2 = () => {
   return (
     <group>
       <Environment background preset="night"></Environment>
+
       <mesh>
         <icosahedronGeometry
           args={[1, 128]}

@@ -160,6 +160,7 @@ export function Suzanne({ children, ...props }) {
   const { nodes, materials } = useGLTF("/suzanne.glb");
   const ref = useRef();
   useFrame((state, delta) => {
+    console.log(state.scene.background);
     ref.current.uniforms.time.value += delta;
     ref.current.uniforms.specMap.value =
       state.scene.background;
